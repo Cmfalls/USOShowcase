@@ -1495,6 +1495,7 @@ h5,
     break-after: auto;
   }
   #p4,
+  #p5,
   #p7,
   #p8 {
     height: auto;
@@ -1506,9 +1507,24 @@ h5,
     break-inside: auto;
   }
   #p4 .page-body,
+  #p5 .page-body,
   #p7 .page-body,
   #p8 .page-body {
     overflow: visible;
+  }
+  #p8 .email-mock,
+  #p8 .email-body,
+  #p8 .email-img {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  #p8 .email-chrome {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  #p8 .email-body {
+    page-break-before: avoid;
+    break-before: avoid;
   }
   #p4 .lp-mock-screen {
     display: none !important;
