@@ -6,17 +6,21 @@
 <title>Flags USA × USO — Partnership Showcase</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Jost:wght@400;500;600;700;800&family=Permanent+Marker&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
 /* ── Variables ────────────────────────────────────────────── */
 :root {
   --ink:       #1e343d;
   --red:       #a62b25;
   --paper:     #f8f5ef;
-  --uso-navy:  #002147;
-  --uso-red:   #bb133e;
-  --muted:     #5a6770;
-  --line:      #d8d3c4;
+  --uso-navy:  #1e343d;
+  --uso-red:   #a62b25;
+  --muted:     #6b5e44;
+  --line:      #d8cfb8;
+  --blue:      #227395;
+  --black:     #090302;
+  --font-head: "Futura", "Futura PT", "Jost", Arial, sans-serif;
+  --font-body: "Jost", Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -1345,6 +1349,99 @@ em { color: var(--red); font-style: italic; }
 }
 
 /* ── Print ────────────────────────────────────────────────── */
+/* Brand typography + color pass */
+body,
+p,
+li,
+a,
+span,
+div,
+button,
+.lede,
+.toc-sub,
+.cover-sub,
+.stat .label,
+.tl-month,
+.about-card p,
+.g-lede,
+.g-stat-copy,
+.g-detail,
+.g-about-content p,
+.lp-list li,
+.pr-body,
+.insert-body p,
+.nl-mock-lede,
+.nl-mock-p,
+.email-copy p,
+.ptile-body-sm,
+.ptile-ed-body {
+  font-family: var(--font-body);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+.cover-meta-value,
+.toc-title,
+.stat .num,
+.tl-event,
+.about-card h4,
+.g-headline,
+.g-headline .brush,
+.g-stat-number,
+.g-name,
+.g-about-content h3,
+.lp-section h5,
+.lp-tile .n,
+.lp-callout-copy h6,
+.pr-lockup .x,
+.pr-quote,
+.nl-mock-hl,
+.nl-mock-quote p,
+.tile .t-title,
+.tile .t-num,
+.email-copy h4,
+.ptile-ed-hed {
+  font-family: var(--font-head) !important;
+}
+.page,
+.nl-mock-body,
+.ptile-editorial,
+.tile.paper,
+.insert,
+.g-illo {
+  background-color: var(--paper);
+}
+.cover,
+.bar,
+.insert-head,
+.insert-foot,
+.nl-mock-header,
+.email-chrome,
+.tile.navy {
+  background-color: var(--ink);
+}
+.page:not(.cover)::before,
+.cover::before,
+.ptile-topbar {
+  background: linear-gradient(to right, var(--red) 0%, var(--red) 60%, var(--ink) 60%);
+}
+.cover,
+.cover h1,
+.tile.navy .t-title,
+.tile.red .t-title,
+.tile.img-tile .t-title,
+.tile.navy .t-num,
+.tile.red .t-num,
+.tile.navy .t-sub,
+.tile.red .t-sub,
+.tile.img-tile .t-sub,
+.email-chrome,
+.ptile-big-hed {
+  color: var(--paper);
+}
+
 @page { size: letter; margin: 0; }
 @media print {
   body { background: #fff; }
@@ -1633,7 +1730,7 @@ em { color: var(--red); font-style: italic; }
       <p>Founded in 1987, Flags USA began as a small, family-run business. Over 37 years later, the women-owned and family-run operation has grown to a 4,000 square foot warehouse with multiple mother-daughter teams. Every flag is proudly made in America.</p>
 
       <h4>Media Contact</h4>
-      <p>Rachel · Flags USA<br/>rachel@flagsusa.com · (866) 879-1776</p>
+      <p>Rachel Howald · Flags USA<br/>rachel@flagsusa.com</p>
     </div>
 
     <div class="pr-end">— END —</div>
