@@ -1455,6 +1455,7 @@ h5,
 }
 
 @page { size: letter; margin: 0; }
+.lp-print-flow { display: none; }
 @media print {
   html,
   body {
@@ -1496,14 +1497,63 @@ h5,
   #p4,
   #p7 {
     height: auto;
-    min-height: 11in;
+    min-height: 0;
     overflow: visible;
+    page-break-after: auto;
     page-break-inside: auto;
+    break-after: auto;
     break-inside: auto;
   }
   #p4 .page-body,
   #p7 .page-body {
     overflow: visible;
+  }
+  #p4 .lp-mock-screen {
+    display: none !important;
+  }
+  #p4 .lp-print-flow {
+    display: block !important;
+    width: 6.82in;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  #p4 .lp-print-frame,
+  #p4 .lp-print-shot {
+    width: 6.82in;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-left: 1px solid #dde0e3;
+    border-right: 1px solid #dde0e3;
+    background-image: url("landing-page-screenshot.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  #p4 .lp-print-frame {
+    height: 7.45in;
+    border-top: 1px solid #dde0e3;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 12px 36px rgba(0,33,71,0.13), 0 1px 4px rgba(0,33,71,0.06);
+    background-position: top center;
+  }
+  #p4 .lp-print-frame .lp-chrome {
+    border-bottom: 1px solid #dde0e3;
+  }
+  #p4 .lp-print-shot {
+    height: 9.5in;
+    border-top: none;
+    page-break-before: always;
+    break-before: page;
+  }
+  #p4 .lp-print-shot--middle {
+    background-position: center center;
+  }
+  #p4 .lp-print-shot--bottom {
+    background-position: bottom center;
+    border-bottom: 1px solid #dde0e3;
+    border-radius: 0 0 5px 5px;
   }
 }
 @media (max-width: 900px) {
@@ -1722,12 +1772,22 @@ h5,
     </div>
 
     <!-- Full-page screenshot -->
-    <div class="lp-mock" style="flex:1;">
+    <div class="lp-mock lp-mock-screen" style="flex:1;">
       <div class="lp-chrome">
         <span class="lp-dot"></span><span class="lp-dot"></span><span class="lp-dot"></span>
         <span class="lp-url-bar">flagsusa.com/pages/uso</span>
       </div>
       <img src="landing-page-screenshot.png" alt="FlagsUSA.com/USO landing page" style="width:100%;display:block;" />
+    </div>
+    <div class="lp-print-flow" aria-hidden="true">
+      <div class="lp-print-frame">
+        <div class="lp-chrome">
+          <span class="lp-dot"></span><span class="lp-dot"></span><span class="lp-dot"></span>
+          <span class="lp-url-bar">flagsusa.com/pages/uso</span>
+        </div>
+      </div>
+      <div class="lp-print-shot lp-print-shot--middle"></div>
+      <div class="lp-print-shot lp-print-shot--bottom"></div>
     </div>
   </div>
   <span class="page-num">004</span>
