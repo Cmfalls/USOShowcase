@@ -1,0 +1,1545 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Flags USA × USO — Partnership Showcase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ── Variables ────────────────────────────────────────────── */
+:root {
+  --ink:       #1e343d;
+  --red:       #a62b25;
+  --paper:     #f8f5ef;
+  --uso-navy:  #002147;
+  --uso-red:   #bb133e;
+  --muted:     #5a6770;
+  --line:      #d8d3c4;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Jost", system-ui, sans-serif;
+  background: #dbd6c9;
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Top utility bar ──────────────────────────────────────── */
+.bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: var(--uso-navy);
+  color: #fff;
+  z-index: 100;
+  padding: 11px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+.bar-left { display: flex; align-items: center; gap: 12px; }
+.bar-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--uso-red); }
+.bar-btn {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.22);
+  padding: 7px 18px;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.bar-btn:hover { background: rgba(255,255,255,0.2); }
+
+/* ── Deck wrapper ─────────────────────────────────────────── */
+.deck {
+  padding: 68px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+/* ── Page base ────────────────────────────────────────────── */
+.page {
+  width: 8.5in;
+  min-height: 11in;
+  background: var(--paper);
+  box-shadow: 0 20px 56px rgba(0,33,71,0.16), 0 2px 8px rgba(0,33,71,0.08);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.page-body {
+  flex: 1;
+  padding: 0.8in;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Running headers + page numbers */
+.page-tag {
+  position: absolute;
+  top: 0.44in;
+  left: 0.8in;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.page-num {
+  position: absolute;
+  bottom: 0.44in;
+  right: 0.8in;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+}
+
+/* Red top-rule on inner pages */
+.page:not(.cover)::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: linear-gradient(to right, var(--red) 0%, var(--red) 60%, var(--uso-navy) 60%);
+  flex-shrink: 0;
+}
+
+/* ── Type system ──────────────────────────────────────────── */
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--red);
+  margin: 0 0 14px;
+}
+h1, h2, h3, h4, h5 {
+  font-family: "Newsreader", Georgia, serif;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.05;
+}
+h1 { font-size: 68px; font-weight: 700; letter-spacing: -0.025em; }
+h2 { font-size: 38px; font-weight: 600; letter-spacing: -0.02em; }
+h3 { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+p { margin: 0 0 14px; }
+.lede {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 5.5in;
+}
+em { color: var(--red); font-style: italic; }
+
+/* ── ══════════════════════════════════════════════════════ ── */
+/* ── PAGE 1 · COVER                                        ── */
+/* ── ══════════════════════════════════════════════════════ ── */
+.cover {
+  background: var(--uso-navy);
+  color: #fff;
+}
+.cover-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.cover-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  opacity: 0.24;
+  filter: saturate(0.9) contrast(1.08);
+}
+.cover-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0,33,71,0.96) 0%, rgba(0,33,71,0.82) 48%, rgba(0,33,71,0.95) 100%),
+    linear-gradient(180deg, rgba(0,33,71,0.78) 0%, rgba(0,33,71,0.52) 42%, rgba(0,33,71,0.9) 100%);
+}
+.cover::before {
+  content: '';
+  display: block;
+  height: 8px;
+  background: linear-gradient(to right, var(--uso-red) 0%, var(--uso-red) 50%, rgba(255,255,255,0.12) 50%);
+  flex-shrink: 0;
+  z-index: 1;
+}
+.cover .page-body {
+  justify-content: space-between;
+  padding-top: 0.7in;
+  position: relative;
+  z-index: 1;
+}
+.cover-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  font-weight: 600;
+  margin-bottom: 0.55in;
+}
+.cover-lockup {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 44px;
+}
+.cover-lockup img.uso  { height: 76px; }
+.cover-lockup img.flags { height: 38px; filter: brightness(0) invert(1); }
+.cover-lockup .lx {
+  font-family: "Newsreader", serif;
+  font-size: 28px;
+  color: rgba(255,255,255,0.3);
+  font-weight: 300;
+}
+.cover h1 {
+  color: #fff;
+  font-size: 72px;
+  max-width: 6.5in;
+  margin-bottom: 22px;
+}
+.cover h1 em { color: rgba(255,255,255,0.55); font-style: italic; }
+.cover-sub {
+  color: rgba(255,255,255,0.68);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 4.8in;
+  font-family: "Jost", sans-serif;
+}
+.cover-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.14);
+}
+.cover-meta-item { padding: 18px 24px 18px 0; }
+.cover-meta-item + .cover-meta-item {
+  padding-left: 24px;
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+.cover-meta-label {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.38);
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.cover-meta-value {
+  font-family: "Newsreader", serif;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* ── ══════════════════════════════════════════════════════ ── */
+/* ── PAGE 2 · TABLE OF CONTENTS                            ── */
+/* ── ══════════════════════════════════════════════════════ ── */
+.toc-intro { margin: 28px 0 24px; }
+.toc-photo {
+  width: 100%;
+  height: 1.65in;
+  margin: 0 0 24px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0,33,71,0.12);
+}
+.toc-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+.toc-list { list-style: none; padding: 0; margin: 0; }
+.toc-row {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.1s;
+}
+.toc-row:first-of-type { border-top: 1px solid var(--line); }
+.toc-row:hover { background: rgba(166,43,37,0.03); }
+.toc-num {
+  font-size: 12px;
+  color: var(--red);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.toc-title {
+  font-family: "Newsreader", serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--ink);
+  display: block;
+  line-height: 1.1;
+}
+.toc-sub { font-size: 12px; color: var(--muted); margin-top: 3px; }
+.toc-page { font-size: 12px; color: var(--muted); font-weight: 500; }
+.toc-row:hover .toc-title { color: var(--red); }
+
+/* ── ══════════════════════════════════════════════════════ ── */
+/* ── PAGE 3 · AT A GLANCE                                  ── */
+/* ── ══════════════════════════════════════════════════════ ── */
+.glance-intro { margin: 28px 0 0; }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 32px 0 36px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.stat { padding: 0 32px 0 0; }
+.stat + .stat {
+  padding-left: 32px;
+  border-left: 1px solid var(--line);
+}
+.stat .num {
+  font-family: "Newsreader", serif;
+  font-size: 60px;
+  font-weight: 700;
+  color: var(--uso-navy);
+  line-height: 0.95;
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
+}
+.stat .label { font-size: 13px; color: var(--muted); line-height: 1.5; max-width: 1.8in; }
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 20px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.tl-cell {
+  padding: 16px 18px;
+  border-right: 1px solid var(--line);
+}
+.tl-cell:last-child { border-right: none; }
+.tl-cell:first-child { background: rgba(166,43,37,0.05); border-left: 3px solid var(--red); }
+.tl-month {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.tl-event {
+  font-family: "Newsreader", serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.25;
+}
+.glance-about {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.about-card {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 22px 24px;
+  background: #fff;
+}
+.about-card h4 {
+  font-family: "Newsreader", serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+.about-card p { font-size: 12.5px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+/* ── ══════════════════════════════════════════════════════ ── */
+/* ── PAGE 4 · LANDING PAGE                                 ── */
+/* ── ══════════════════════════════════════════════════════ ── */
+.lp-intro { margin: 28px 0 20px; }
+.lp-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 28px;
+  flex: 1;
+}
+.lp-mock {
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0,33,71,0.13), 0 1px 4px rgba(0,33,71,0.06);
+  border: 1px solid #dde0e3;
+  display: flex;
+  flex-direction: column;
+}
+.lp-chrome {
+  background: #f0f1f3;
+  padding: 7px 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  border-bottom: 1px solid #dde0e3;
+  flex-shrink: 0;
+}
+.lp-dot { width: 8px; height: 8px; border-radius: 50%; }
+.lp-dot:nth-child(1) { background: #f4605b; }
+.lp-dot:nth-child(2) { background: #f9bc34; }
+.lp-dot:nth-child(3) { background: #3bc84a; }
+.lp-url-bar {
+  margin-left: 8px;
+  background: #fff;
+  border: 1px solid #d0d3d8;
+  border-radius: 10px;
+  padding: 3px 12px;
+  font-size: 9.5px;
+  color: #666;
+  flex: 1;
+  font-family: "Jost", sans-serif;
+}
+/* Hero */
+.lp-hero {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.lp-hero img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 78%;
+}
+.lp-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,33,71,0.92) 0%, rgba(0,33,71,0.4) 60%, rgba(0,33,71,0.06) 100%);
+}
+.lp-hero-content {
+  position: absolute;
+  bottom: 14px; left: 16px; right: 16px;
+  color: #fff;
+}
+.lp-hero-eb {
+  font-size: 7px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(255,255,255,0.65); margin-bottom: 5px; font-weight: 600;
+}
+.lp-hero-content h4 {
+  font-family: "Newsreader", serif;
+  font-size: 17px; font-weight: 700; margin: 0 0 6px; line-height: 1.1;
+}
+.lp-hero-content p {
+  font-size: 8.5px; color: rgba(255,255,255,0.82);
+  margin: 0 0 8px; line-height: 1.45; max-width: 200px;
+}
+.lp-btn-sm {
+  display: inline-block; background: var(--red); color: #fff;
+  padding: 4px 10px; border-radius: 3px; font-size: 7.5px;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
+}
+/* Logo bar */
+.lp-logos-row {
+  padding: 10px 14px;
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  border-bottom: 1px solid #e8eaec;
+  flex-shrink: 0;
+}
+.lp-logos-row img.u { height: 24px; }
+.lp-logos-row img.f { height: 12px; }
+.lp-logos-row .div { width: 1px; height: 18px; background: #dde0e3; }
+/* Sections */
+.lp-section {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e8eaec;
+  flex-shrink: 0;
+}
+.lp-section:last-child { border-bottom: none; }
+.lp-section .eb {
+  font-size: 7px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--red); font-weight: 700; margin-bottom: 5px;
+}
+.lp-section h5 {
+  font-family: "Newsreader", serif;
+  font-size: 14px; font-weight: 600; color: var(--ink); margin: 0 0 10px;
+}
+.lp-partner-cards {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 7px;
+}
+.lp-card {
+  border-radius: 3px; overflow: hidden; border: 1px solid #e0e2e5;
+}
+.lp-card img { width: 100%; height: 48px; object-fit: cover; display: block; }
+.lp-card .body {
+  padding: 7px 8px; text-align: center;
+}
+.lp-card.uso .body { background: var(--uso-navy); }
+.lp-card.flags .body { background: var(--paper); }
+.lp-card .body img { height: 10px; width: auto; margin: 0 auto 3px; display: block; object-fit: contain; }
+.lp-card.uso .body p { font-family: "Newsreader", serif; font-size: 7px; color: #fff; margin: 0; font-weight: 600; line-height: 1.25; }
+.lp-card.flags .body p { font-family: "Newsreader", serif; font-size: 7px; color: var(--ink); margin: 0; font-weight: 600; line-height: 1.25; }
+/* Impact tiles */
+.lp-impact-grid {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 5px; margin-top: 8px;
+}
+.lp-tile {
+  background: #fff; border: 1px solid #e0e2e5; border-radius: 3px; padding: 7px 5px; text-align: center;
+}
+.lp-tile .n { font-family: "Newsreader", serif; font-size: 13px; font-weight: 700; color: var(--uso-navy); line-height: 1; }
+.lp-tile .l { font-size: 5.5px; color: var(--muted); margin-top: 2px; line-height: 1.3; }
+/* Callout band mini */
+.lp-callout-band {
+  background: linear-gradient(135deg, #012655 0%, #002147 60%, #001a39 100%);
+  padding: 12px 16px;
+  display: flex; gap: 10px; align-items: center;
+  border-bottom: 1px solid #001030;
+}
+.lp-callout-copy h6 {
+  font-family: "Newsreader", serif;
+  font-size: 11px; font-weight: 700; color: #fff; margin: 0 0 4px; line-height: 1.15;
+}
+.lp-callout-copy p { font-size: 7.5px; color: rgba(255,255,255,0.75); margin: 0 0 7px; line-height: 1.4; }
+.lp-callout-cta {
+  display: inline-block; background: #fff; color: var(--uso-navy);
+  padding: 4px 10px; border-radius: 3px; font-size: 7px; font-weight: 700; white-space: nowrap;
+}
+.lp-callout-img img {
+  display: block; width: 72px; border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Shopify sticky nav */
+.lp-shopify-nav {
+  border-top: 1px solid #e8eaec; border-bottom: 1px solid #e8eaec;
+  padding: 6px 12px; display: flex; align-items: center; gap: 8px;
+  background: #fff; flex-shrink: 0;
+}
+.lp-shopify-search {
+  flex: 1; background: #f5f5f7; border: 1px solid #e0e0e2;
+  border-radius: 14px; padding: 3px 9px; font-size: 7.5px; color: #aaa;
+  display: flex; align-items: center; gap: 4px;
+}
+.lp-shopify-icons { display: flex; gap: 8px; align-items: center; }
+.lp-shopify-icons span { font-size: 11px; color: #555; line-height: 1; }
+
+/* Right column — page notes */
+.lp-notes h3 { font-size: 20px; margin: 0 0 16px; }
+.lp-list {
+  list-style: none; padding: 0; margin: 0 0 22px;
+}
+.lp-list li {
+  padding: 10px 0; font-size: 12.5px; color: var(--muted); line-height: 1.5;
+  border-bottom: 1px solid var(--line);
+  display: flex; gap: 10px;
+}
+.lp-list li:last-child { border-bottom: none; }
+.lp-list li strong { color: var(--ink); font-weight: 700; white-space: nowrap; }
+.lp-pill {
+  background: var(--ink); color: #fff;
+  padding: 11px 16px; border-radius: 4px; font-size: 12px;
+  text-align: center; font-weight: 500;
+}
+.lp-pill span { color: var(--uso-red); margin-right: 6px; }
+
+/* ── ══════════════════════════════════════════════════════ ── */
+/* ── PAGE 5 · PRESS RELEASE                                ── */
+/* ── ══════════════════════════════════════════════════════ ── */
+.pr { padding-top: 0.9in !important; }
+.pr-head {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  padding-bottom: 16px; border-bottom: 2px solid var(--ink); margin-bottom: 20px;
+}
+.pr-lockup { display: flex; align-items: center; gap: 14px; }
+.pr-lockup img.f { height: 20px; }
+.pr-lockup .x { font-family: "Newsreader", serif; font-size: 16px; color: var(--muted); }
+.pr-lockup img.u { height: 32px; }
+.pr-meta { font-size: 10px; color: var(--muted); text-align: right; line-height: 1.5; }
+.pr-tag {
+  background: var(--red); color: #fff;
+  padding: 3px 8px; border-radius: 2px;
+  font-weight: 700; font-size: 9px; letter-spacing: 0.07em;
+  text-transform: uppercase; display: inline-block; margin-bottom: 5px;
+}
+.pr h2 { font-size: 32px; margin-bottom: 14px; max-width: 7in; line-height: 1.1; }
+.pr-dateline {
+  font-size: 12px; font-weight: 600; color: var(--ink);
+  margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line);
+}
+.pr-dateline .city { color: var(--red); }
+.pr-body {
+  columns: 2; column-gap: 26px;
+  column-rule: 1px solid var(--line);
+  font-size: 11.5px; line-height: 1.68; color: var(--ink);
+}
+.pr-body p { margin: 0 0 11px; }
+.pr-quote {
+  border-left: 3px solid var(--red);
+  padding: 4px 0 4px 13px; margin: 0 0 12px;
+  font-family: "Newsreader", serif; font-style: italic;
+  font-size: 12.5px; line-height: 1.5;
+  break-inside: avoid;
+}
+.pr-quote .attr {
+  display: block; font-family: "Jost", sans-serif;
+  font-size: 9px; font-style: normal; color: var(--muted);
+  margin-top: 5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600;
+}
+.pr-body h4 {
+  font-family: "Jost", sans-serif;
+  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--red); margin: 14px 0 7px; font-weight: 700; break-after: avoid;
+}
+.pr-end {
+  text-align: center; font-size: 10px; color: var(--muted);
+  letter-spacing: 0.35em; margin-top: 18px; padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+/* ── ══════════════════════════════════════════════════════ ── */
+/* ── PAGE 6 · PRODUCT INSERT                               ── */
+/* ── ══════════════════════════════════════════════════════ ── */
+.product-insert-page .page-body {
+  padding-top: 0.68in;
+  padding-bottom: 0.56in;
+}
+.pi-intro { margin: 28px 0 20px; }
+.insert-showcase {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.insert-frame {
+  width: 5.75in;
+  max-width: 100%;
+}
+.insert-preview-label {
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.2;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 0 26px;
+}
+.pi-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 32px; align-items: start; flex: 1;
+}
+.insert {
+  width: 100%; aspect-ratio: 4 / 5.25;
+  background: #fff; border-radius: 8px; overflow: hidden;
+  box-shadow: 0 18px 44px rgba(0,33,71,0.18), 0 2px 7px rgba(0,33,71,0.08);
+  display: flex; flex-direction: column;
+  border: 0;
+}
+.insert-head {
+  background: var(--uso-navy); padding: 28px 40px;
+  display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+}
+.insert-head img.f { height: 30px; filter: brightness(0) invert(1); }
+.insert-head img.u { height: 38px; }
+.insert-body {
+  flex: 1; padding: 42px 54px 36px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+}
+.insert-eb {
+  font-size: 14px; line-height: 1.25; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink); font-weight: 700; margin-bottom: 26px;
+}
+.insert-body h3 {
+  font-size: 32px; color: var(--uso-navy); font-weight: 700;
+  margin: 0 0 20px; line-height: 1.08; max-width: 4.6in;
+}
+.insert-body p {
+  font-size: 15.5px; color: var(--ink); line-height: 1.75; margin: 0 0 30px; max-width: 4.65in;
+}
+.insert-body p strong { color: var(--ink); font-weight: 700; }
+.qr-box {
+  width: 1.55in; height: 1.55in; margin: 0 auto 18px;
+  padding: 0.22in; border: 2px dashed #b7c0c8; border-radius: 8px;
+  background: #fff;
+}
+.qr-box svg { width: 100%; height: 100%; }
+.qr-box svg g { fill: #000; }
+.insert-scan {
+  font-size: 12.5px !important; color: var(--muted) !important;
+  line-height: 1.45 !important; margin: 0 !important; max-width: 1.8in !important;
+}
+.insert-scan strong { display: block; color: var(--ink); margin-top: 2px; font-size: 13px; }
+.insert-foot {
+  background: var(--uso-navy); padding: 22px 40px;
+  display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+}
+.insert-foot .left { display: flex; align-items: center; gap: 22px; }
+.insert-foot img.f { height: 18px; filter: brightness(0) invert(1); }
+.insert-foot img.u { height: 26px; }
+.insert-foot .sep { display: none; }
+.insert-foot .right { font-size: 13px; font-weight: 700; text-align: right; line-height: 1.28; color: rgba(255,255,255,0.84); }
+.insert-caption {
+  text-align: center; font-size: 14px; color: #8a99a5;
+  letter-spacing: 0; text-transform: none; margin-top: 26px;
+}
+.pi-specs { display: flex; flex-direction: column; gap: 22px; }
+.pi-specs h3 { margin: 0 0 12px; }
+.spec {
+  display: flex; justify-content: space-between;
+  padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 12.5px;
+}
+.spec .l { color: var(--muted); }
+.spec .v { color: var(--ink); font-weight: 600; }
+.pi-note {
+  background: #fff8e6; border: 1px solid #e8d48a; border-left: 4px solid #c9960d;
+  border-radius: 4px; padding: 12px 14px;
+  font-size: 11.5px; color: #5c4008; line-height: 1.5;
+}
+.pi-note strong {
+  display: block; font-size: 10px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #3d2a04; margin-bottom: 3px;
+}
+
+/* ── ══════════════════════════════════════════════════════ ── */
+/* ── PAGE 7 · NEWSLETTER                                   ── */
+/* ── ══════════════════════════════════════════════════════ ── */
+.nl-intro { margin: 28px 0 18px; }
+.nl-grid {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 28px; flex: 1; align-items: start;
+}
+.nl-mock {
+  background: #fff;
+  border-radius: 5px; overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0,33,71,0.13), 0 1px 4px rgba(0,33,71,0.06);
+  border: 1px solid #dde0e3;
+  font-family: "Newsreader", Georgia, serif;
+  transform-origin: top center;
+}
+.nl-mock-header {
+  background: var(--uso-navy);
+  padding: 13px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nl-mock-header img.u { height: 22px; }
+.nl-mock-header img.f { height: 12px; filter: brightness(0) invert(1); }
+.nl-mock-sep { color: rgba(255,255,255,0.3); font-family: "Newsreader", serif; font-size: 14px; }
+.nl-mock-photo {
+  height: 128px;
+  overflow: hidden;
+}
+.nl-mock-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  display: block;
+}
+.nl-mock-body { padding: 24px 28px 20px; background: #f8f5ef; }
+.nl-mock-issue {
+  font-family: "Jost", sans-serif;
+  font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); font-weight: 600; margin-bottom: 18px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+.nl-mock-eb {
+  font-family: "Jost", sans-serif;
+  font-size: 9px; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--red); margin-bottom: 8px;
+}
+.nl-mock-hl {
+  font-family: "Newsreader", serif;
+  font-size: 24px; font-weight: 700; color: var(--ink);
+  line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px;
+}
+.nl-mock-hl em { color: var(--red); font-style: italic; }
+.nl-mock-lede {
+  font-family: "Newsreader", serif;
+  font-size: 12.5px; line-height: 1.7; color: var(--ink); margin-bottom: 14px;
+}
+.nl-mock-lede::first-letter {
+  font-size: 38px; float: left; line-height: 0.88;
+  padding: 4px 6px 0 0; color: var(--red); font-weight: 700;
+}
+.nl-mock-h2 {
+  font-family: "Jost", sans-serif;
+  font-size: 9px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--red); margin: 16px 0 8px;
+}
+.nl-mock-p {
+  font-family: "Newsreader", serif;
+  font-size: 12px; line-height: 1.65; color: var(--ink); margin-bottom: 10px;
+}
+.nl-mock-quote {
+  border-left: 3px solid var(--red); padding: 4px 0 4px 14px; margin: 14px 0;
+}
+.nl-mock-quote p {
+  font-family: "Newsreader", serif; font-style: italic;
+  font-size: 13px; line-height: 1.4; color: var(--ink); margin: 0 0 5px;
+}
+.nl-mock-quote .attr {
+  font-family: "Jost", sans-serif; font-size: 8.5px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+}
+.nl-mock-cta {
+  text-align: center; padding: 14px 0 10px;
+}
+.nl-mock-cta a {
+  display: inline-block; background: var(--red); color: #fff;
+  padding: 10px 24px; border-radius: 3px; font-family: "Jost", sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none;
+}
+.nl-mock-footer {
+  background: #1e343d; padding: 12px 24px; text-align: center;
+  font-family: "Jost", sans-serif; font-size: 9px; color: rgba(255,255,255,0.4);
+  line-height: 1.6;
+}
+/* Right column */
+.nl-notes h3 { font-size: 20px; margin: 0 0 16px; }
+.nl-meta-grid {
+  display: grid; grid-template-columns: 1fr; gap: 0; margin-bottom: 22px;
+  border: 1px solid var(--line); border-radius: 4px; overflow: hidden;
+}
+.nl-meta-row {
+  display: flex; gap: 12px; padding: 11px 14px;
+  border-bottom: 1px solid var(--line); font-size: 12px;
+}
+.nl-meta-row:last-child { border-bottom: none; }
+.nl-meta-label {
+  font-family: "Jost", sans-serif; font-size: 9px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+  min-width: 64px; padding-top: 1px;
+}
+.nl-meta-val { color: var(--ink); font-size: 12px; line-height: 1.4; }
+.nl-sections { list-style: none; padding: 0; margin: 0; }
+.nl-sections li {
+  padding: 9px 0; font-size: 12.5px; color: var(--muted); line-height: 1.4;
+  border-bottom: 1px solid var(--line);
+  display: flex; gap: 10px;
+}
+.nl-sections li:last-child { border-bottom: none; }
+.nl-sections li strong { color: var(--ink); font-weight: 700; white-space: nowrap; }
+
+/* ── ══════════════════════════════════════════════════════ ── */
+/* ── PAGE 8 · SOCIAL & EMAIL                               ── */
+/* ── ══════════════════════════════════════════════════════ ── */
+.social-intro { margin: 28px 0 16px; }
+.social-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 12px; margin-bottom: 28px;
+}
+.tile {
+  aspect-ratio: 1; border-radius: 5px; overflow: hidden;
+  position: relative; display: flex; flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 22px rgba(0,33,71,0.12);
+}
+.tile img.tile-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center 30%;
+}
+.tile .tile-scrim {
+  position: absolute; inset: 0;
+}
+.tile .tile-content {
+  position: relative; z-index: 1;
+  padding: 18px; display: flex; flex-direction: column;
+  justify-content: space-between; height: 100%;
+}
+.tile .t-eb {
+  font-size: 8.5px; letter-spacing: 0.18em; text-transform: uppercase;
+  font-weight: 700; opacity: 0.82;
+}
+.tile.navy .t-eb, .tile.red .t-eb, .tile.img-tile .t-eb { color: rgba(255,255,255,0.82); }
+.tile.paper .t-eb { color: var(--red); }
+.tile .t-title {
+  font-family: "Newsreader", serif; font-size: 18px; font-weight: 700;
+  line-height: 1.05; margin: 0;
+}
+.tile.navy .t-title, .tile.red .t-title, .tile.img-tile .t-title { color: #fff; }
+.tile.paper .t-title { color: var(--ink); }
+.tile .t-num {
+  font-family: "Newsreader", serif; font-size: 48px; font-weight: 700; line-height: 1; margin: 0;
+}
+.tile.navy .t-num, .tile.red .t-num { color: #fff; }
+.tile .t-sub { font-size: 10.5px; line-height: 1.4; margin: 5px 0 0; }
+.tile.navy .t-sub, .tile.red .t-sub, .tile.img-tile .t-sub { color: rgba(255,255,255,0.82); }
+.tile.paper .t-sub { color: var(--muted); }
+.tile .t-foot {
+  font-size: 8.5px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; opacity: 0.6;
+}
+.tile.navy .t-foot, .tile.red .t-foot, .tile.img-tile .t-foot { color: rgba(255,255,255,0.7); }
+.tile.paper .t-foot { color: var(--muted); }
+.tile.navy { background: var(--uso-navy); }
+.tile.paper { background: var(--paper); border: 1px solid var(--line); }
+.tile.red { background: var(--red); }
+.tile.img-tile .tile-scrim {
+  background: linear-gradient(to bottom, rgba(0,33,71,0.48) 0%, rgba(0,33,71,0.82) 100%);
+}
+
+/* Email preview */
+.email-mock {
+  background: #fff; border: 1px solid var(--line); border-radius: 5px;
+  overflow: hidden; box-shadow: 0 10px 28px rgba(0,33,71,0.10);
+}
+.email-chrome {
+  background: var(--uso-navy); color: #fff; padding: 9px 18px;
+  font-size: 9.5px; font-family: "Jost", sans-serif;
+  display: flex; justify-content: space-between; gap: 24px;
+  letter-spacing: 0.03em;
+}
+.email-body {
+  padding: 24px 28px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 24px; align-items: center;
+}
+.email-copy .e-eb {
+  font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--red); font-weight: 700; margin-bottom: 7px;
+}
+.email-copy h4 {
+  font-family: "Newsreader", serif; font-size: 20px; font-weight: 700;
+  margin: 0 0 10px; line-height: 1.1; color: var(--ink);
+}
+.email-copy p { font-size: 12px; color: var(--muted); line-height: 1.55; margin: 0 0 11px; }
+.email-cta {
+  display: inline-block; background: var(--red); color: #fff;
+  padding: 8px 16px; border-radius: 3px; font-family: "Jost", sans-serif;
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
+  text-decoration: none;
+}
+.email-img {
+  aspect-ratio: 4/3; border-radius: 4px; overflow: hidden;
+}
+.email-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ── ══════════════════════════════════════════════════════ ── */
+/* ── PAGE 8 extension · Portrait Social Tiles              ── */
+/* ── ══════════════════════════════════════════════════════ ── */
+.portrait-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 3.1in);
+  gap: 24px;
+  margin: 0 auto 32px;
+  justify-content: center;
+}
+.ptile {
+  aspect-ratio: 4/5;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 12px 32px rgba(0,33,71,0.16);
+  display: flex;
+  flex-direction: column;
+}
+/* photo-bg variant */
+.ptile-photo img.ptile-bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 25%;
+}
+.ptile-photo .ptile-scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(0,33,71,0.1) 0%,
+    rgba(0,33,71,0.28) 36%,
+    rgba(0,33,71,0.82) 58%,
+    rgba(0,33,71,0.97) 100%);
+}
+.ptile-topbar {
+  position: absolute; top: 0; left: 0; right: 0; height: 5px; z-index: 3;
+  background: linear-gradient(to right, var(--uso-red) 50%, var(--uso-navy) 50%);
+}
+.ptile-stars-tr {
+  position: absolute; top: 14px; right: 15px; z-index: 3;
+  color: rgba(255,255,255,0.6); font-size: 9px; letter-spacing: 6px;
+}
+.ptile-overlay {
+  position: relative; z-index: 2;
+  margin-top: auto; padding: 14px 16px 0;
+}
+.ptile-gold-kicker {
+  font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: #c9a74a; font-weight: 700; margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.ptile-gold-kicker::before {
+  content: ''; width: 18px; height: 1px; background: #c9a74a; display: block; flex-shrink: 0;
+}
+.ptile-big-hed {
+  font-family: "Jost", sans-serif;
+  font-size: 38px; font-weight: 900;
+  color: #fff; text-transform: uppercase;
+  line-height: 0.92; margin: 0 0 12px; letter-spacing: -0.01em;
+}
+.ptile-big-hed .gold-text { color: #c9a74a; }
+.ptile-body-sm {
+  font-size: 11.5px; color: rgba(255,255,255,0.84); line-height: 1.5; margin: 0;
+}
+.ptile-foot {
+  background: var(--paper); z-index: 2; flex-shrink: 0;
+  padding: 9px 14px 7px;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.ptile-foot-lockup { display: flex; align-items: center; gap: 9px; }
+.ptile-foot-lockup img.f { height: 7px; }
+.ptile-foot-lockup img.u { height: 13px; }
+.ptile-foot-lockup .vline { width: 1px; height: 14px; background: var(--line); }
+.ptile-foot-tagline {
+  font-size: 5.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+}
+/* editorial variant */
+.ptile-editorial {
+  background: var(--paper);
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 24px 22px 18px;
+}
+.ptile-ed-frame {
+  position: absolute; inset: 10px;
+  border: 1px solid rgba(30,52,61,0.22);
+  pointer-events: none;
+}
+.ptile-ed-corner {
+  position: absolute; width: 9px; height: 9px;
+  border-color: rgba(30,52,61,0.55); border-style: solid;
+}
+.ptile-ed-corner.tl { top: -4px; left: -4px; border-width: 2px 0 0 2px; }
+.ptile-ed-corner.tr { top: -4px; right: -4px; border-width: 2px 2px 0 0; }
+.ptile-ed-corner.bl { bottom: -4px; left: -4px; border-width: 0 0 2px 2px; }
+.ptile-ed-corner.br { bottom: -4px; right: -4px; border-width: 0 2px 2px 0; }
+.ptile-ed-announce {
+  font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink); font-weight: 600; opacity: 0.55;
+}
+.ptile-ed-star-icon { font-size: 11px; color: rgba(30,52,61,0.38); display: block; margin-bottom: 7px; }
+.ptile-ed-hed {
+  font-family: "Newsreader", serif;
+  font-size: 40px; font-weight: 700; color: var(--uso-navy);
+  line-height: 1.05; margin: 0;
+}
+.ptile-ed-hed em { color: var(--red); font-style: italic; }
+.ptile-ed-rule {
+  display: flex; align-items: center; gap: 8px; width: 100%; margin: 12px 0;
+}
+.ptile-ed-rule::before, .ptile-ed-rule::after {
+  content: ''; flex: 1; height: 1px; background: rgba(30,52,61,0.2);
+}
+.ptile-ed-rule-star { font-size: 10px; color: rgba(30,52,61,0.4); }
+.ptile-ed-body {
+  font-size: 12.5px; color: var(--ink); line-height: 1.55; max-width: 86%; margin: 0 auto;
+}
+.ptile-ed-three-stars { letter-spacing: 8px; font-size: 10px; color: rgba(30,52,61,0.38); }
+.ptile-ed-logos {
+  display: flex; align-items: center; gap: 13px;
+  border-top: 1px solid rgba(30,52,61,0.15); width: 100%;
+  padding-top: 10px; justify-content: center; margin-top: 8px;
+}
+.ptile-ed-logos img.f { height: 10px; }
+.ptile-ed-logos img.u { height: 18px; }
+.ptile-ed-logos .vline { width: 1px; height: 20px; background: rgba(30,52,61,0.2); }
+.ptile-ed-footer {
+  font-size: 7.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 5px;
+}
+
+/* ── Print ────────────────────────────────────────────────── */
+@page { size: letter; margin: 0; }
+@media print {
+  body { background: #fff; }
+  .bar { display: none !important; }
+  .deck { padding: 0; gap: 0; }
+  .page {
+    box-shadow: none;
+    page-break-after: always;
+    break-after: page;
+    height: 11in;
+    min-height: 0;
+  }
+  .page:last-child { page-break-after: auto; }
+}
+@media (max-width: 900px) {
+  .deck { padding: 72px 12px 48px; }
+  .page { transform: scale(0.44); transform-origin: top center; margin-bottom: -600px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Top bar ──────────────────────────────────────────────── -->
+<div class="bar">
+  <div class="bar-left">
+    <span class="bar-dot"></span>
+    Flags USA × USO — Partnership Showcase
+  </div>
+  <button class="bar-btn" onclick="window.print()">Print to PDF</button>
+</div>
+
+<div class="deck">
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 1 · COVER
+════════════════════════════════════════════════════════════ -->
+<section class="page cover">
+  <div class="cover-bg">
+    <img src="USO2GO-PIB-USO-Brand-Stock-ATL-2024-015-1.jpg" alt="" />
+  </div>
+  <div class="page-body">
+    <div class="cover-top">
+      <span>Partnership Showcase · 2026</span>
+      <span>Prepared for the USO</span>
+    </div>
+    <div>
+      <div class="cover-lockup">
+        <img class="uso" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/united_service_organizations_logo_svg.png?v=1777906927" alt="USO" />
+        <span class="lx">×</span>
+        <img class="flags" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/flagsusa-logo.svg?v=1777906927" alt="Flags USA" />
+      </div>
+      <h1>Standing beside<br/><em>those who serve.</em></h1>
+      <p class="cover-sub">A complete look at the launch assets built for the Flags USA and USO partnership — running through America's 250th.</p>
+    </div>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Campaign</div>
+        <div class="cover-meta-value">Proud Partner of the USO</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Campaign Window</div>
+        <div class="cover-meta-value">May – December 2026</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Prepared By</div>
+        <div class="cover-meta-value">Flags USA Marketing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 2 · TABLE OF CONTENTS
+════════════════════════════════════════════════════════════ -->
+<section class="page" id="p2">
+  <span class="page-tag">Contents</span>
+  <div class="page-body">
+    <div class="toc-intro" style="margin-top: 36px;">
+      <p class="eyebrow">Inside This Deck</p>
+      <h2>Partnership launch assets.</h2>
+    </div>
+    <div class="toc-photo">
+      <img src="Transition-USO-Brand-Stock-ATL-2024-005.jpg" alt="" />
+    </div>
+    <ul class="toc-list">
+      <li><a class="toc-row" href="#p3">
+        <span class="toc-num">01</span>
+        <span><span class="toc-title">At a Glance</span><span class="toc-sub">Partnership goals, key numbers, and campaign timeline.</span></span>
+        <span class="toc-page">003</span>
+      </a></li>
+      <li><a class="toc-row" href="#p4">
+        <span class="toc-num">02</span>
+        <span><span class="toc-title">Landing Page</span><span class="toc-sub">FlagsUSA.com/USO — dedicated partnership page on Shopify.</span></span>
+        <span class="toc-page">004</span>
+      </a></li>
+      <li><a class="toc-row" href="#p5">
+        <span class="toc-num">03</span>
+        <span><span class="toc-title">Press Release</span><span class="toc-sub">Full announcement copy, approved and ready to distribute.</span></span>
+        <span class="toc-page">005</span>
+      </a></li>
+      <li><a class="toc-row" href="#p6">
+        <span class="toc-num">04</span>
+        <span><span class="toc-title">Product Insert</span><span class="toc-sub">6 × 4 in. thank-you card ships inside every order.</span></span>
+        <span class="toc-page">006</span>
+      </a></li>
+      <li><a class="toc-row" href="#p7">
+        <span class="toc-num">05</span>
+        <span><span class="toc-title">Newsletter</span><span class="toc-sub">Announcement email to the Flags USA customer list.</span></span>
+        <span class="toc-page">007</span>
+      </a></li>
+      <li><a class="toc-row" href="#p8">
+        <span class="toc-num">06</span>
+        <span><span class="toc-title">Social &amp; Email Creative</span><span class="toc-sub">Two Instagram posts and an announcement email mockup.</span></span>
+        <span class="toc-page">008</span>
+      </a></li>
+    </ul>
+  </div>
+  <span class="page-num">002</span>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 3 · AT A GLANCE
+════════════════════════════════════════════════════════════ -->
+<section class="page" id="p3">
+  <span class="page-tag">01 · At a Glance</span>
+  <div class="page-body">
+    <div class="glance-intro">
+      <p class="eyebrow">The Partnership in Brief</p>
+      <h2>One mission. <em>Real impact.</em></h2>
+      <p class="lede" style="margin-top: 16px;">Flags USA and the USO share a commitment to the men and women who serve. The partnership runs through December 2026 and gives every customer a direct way to support active-duty troops and military families.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="num">$2.50</div>
+        <div class="label">Optional add-on donation at checkout. 100% benefits USO programs and services.</div>
+      </div>
+      <div class="stat">
+        <div class="num">$25K</div>
+        <div class="label">Flags USA match commitment — doubling every dollar contributed.</div>
+      </div>
+      <div class="stat">
+        <div class="num">8 mo</div>
+        <div class="label">Campaign window anchored to America's 250th anniversary year.</div>
+      </div>
+    </div>
+
+    <p class="eyebrow">Campaign Timeline</p>
+    <div class="timeline">
+      <div class="tl-cell"><div class="tl-month">May 2026</div><div class="tl-event">Launch &amp; Press</div></div>
+      <div class="tl-cell"><div class="tl-month">Jun – Jul</div><div class="tl-event">America 250 Push</div></div>
+      <div class="tl-cell"><div class="tl-month">Aug – Sep</div><div class="tl-event">Mid-Campaign Update</div></div>
+      <div class="tl-cell"><div class="tl-month">Oct – Nov</div><div class="tl-event">Veterans Day</div></div>
+      <div class="tl-cell"><div class="tl-month">Dec 2026</div><div class="tl-event">Wrap &amp; Report</div></div>
+    </div>
+
+    <div class="glance-about">
+      <div class="about-card">
+        <h4>About the USO</h4>
+        <p>The leading nonprofit dedicated to strengthening the well-being of people serving in America's military and their families. Since 1941, the USO has operated in 260+ locations across 55 states/territories and 134 countries.</p>
+      </div>
+      <div class="about-card">
+        <h4>About Flags USA</h4>
+        <p>Founded in 1987, Flags USA is a women-owned, family-run operation based in Carol Stream, IL. Every flag is proudly made in America. The company has grown from a small family business to a national flag supplier over 37+ years.</p>
+      </div>
+    </div>
+  </div>
+  <span class="page-num">003</span>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 4 · LANDING PAGE
+════════════════════════════════════════════════════════════ -->
+<section class="page" id="p4">
+  <span class="page-tag">02 · Landing Page</span>
+  <div class="page-body">
+    <div class="lp-intro">
+      <p class="eyebrow">02 · Web</p>
+      <h2>FlagsUSA.com/USO</h2>
+      <p class="lede" style="margin-top: 12px;">A dedicated partnership page built in Shopify, live on the Flags USA storefront.</p>
+    </div>
+
+    <!-- Full-page screenshot -->
+    <div class="lp-mock" style="flex:1;">
+      <div class="lp-chrome">
+        <span class="lp-dot"></span><span class="lp-dot"></span><span class="lp-dot"></span>
+        <span class="lp-url-bar">flagsusa.com/pages/uso</span>
+      </div>
+      <img src="FullWebPage.png" alt="FlagsUSA.com/USO landing page" style="width:100%;display:block;" />
+    </div>
+  </div>
+  <span class="page-num">004</span>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 5 · PRESS RELEASE
+════════════════════════════════════════════════════════════ -->
+<section class="page" id="p5">
+  <span class="page-tag">03 · Press Release</span>
+  <div class="page-body pr">
+    <div class="pr-head">
+      <div class="pr-lockup">
+        <img class="f" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/flagsusa-logo.svg?v=1777906927" alt="" />
+        <span class="x">×</span>
+        <img class="u" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/united_service_organizations_logo_svg.png?v=1777906927" alt="" />
+      </div>
+      <div class="pr-meta">
+        <span class="pr-tag">For Immediate Release</span><br/>
+        R2 · May 2026
+      </div>
+    </div>
+
+    <p class="eyebrow">Press Release</p>
+    <h2>Flags USA Partners with the USO Through December 2026.</h2>
+
+    <p class="pr-dateline"><span class="city">CAROL STREAM, IL — MAY 7, 2026</span> · Flags USA announced today a partnership with the USO and its mission of supporting service members and their families.</p>
+
+    <div class="pr-body">
+      <p>This collaboration reflects strong natural synergies between the USO and Flags USA. Both organizations share a deep dedication to patriotism, service, and meaningful ways for Americans to show their support for those who serve.</p>
+
+      <p>As part of the initiative, Flags USA customers will have the opportunity to give back at checkout by adding a $2.50 donation to their purchase, directly benefiting the USO's programs and services for active-duty troops and their families.</p>
+
+      <p>In addition, the USO will launch a dedicated fundraising campaign inviting supporters to contribute to its mission. To further amplify donor impact, Flags USA has committed to matching all donations made through the campaign, up to $25,000, doubling the generosity of contributors.</p>
+
+      <p class="pr-quote">"We are grateful to Flags USA for supporting the USO's mission. This campaign will have a direct impact on the lives of our service members and their families around the globe."
+        <span class="attr">Ben Leslie · USO Chief Development Officer</span>
+      </p>
+
+      <p class="pr-quote">"At Flags USA, the American flag has always represented far more than a product. The flag represents the people who have sacrificed to protect the freedoms we all share. Partnering with the USO allows us to support service members and their families during such an important moment in our country's history leading into America 250."
+        <span class="attr">Kim Dacka · CEO, Flags USA</span>
+      </p>
+
+      <p>The partnership reinforces Flags USA's commitment to family, service, and the American Spirit, during a celebratory year on the country's 250th birthday.</p>
+
+      <h4>About the USO</h4>
+      <p>The USO is the leading nonprofit dedicated to strengthening the well-being of the people serving in America's military and their families. Since 1941, the USO has stood beside service members throughout their military service through 260+ locations around the world, care package delivery, entertainment, and military spouse and youth programming. Visit USO.org.</p>
+
+      <h4>About Flags USA</h4>
+      <p>Founded in 1987, Flags USA began as a small, family-run business. Over 37 years later, the women-owned and family-run operation has grown to a 4,000 square foot warehouse with multiple mother-daughter teams. Every flag is proudly made in America.</p>
+
+      <h4>Media Contact</h4>
+      <p>Connor Falls · Marketing Manager, Flags USA<br/>connor@flagsusa.com · (866) 879-1776</p>
+    </div>
+
+    <div class="pr-end">— END —</div>
+  </div>
+  <span class="page-num">005</span>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 6 · PRODUCT INSERT
+════════════════════════════════════════════════════════════ -->
+<section class="page product-insert-page" id="p6">
+  <span class="page-tag">04 · Product Insert</span>
+  <div class="page-body">
+    <div class="pi-intro" style="display:none;">
+      <p class="eyebrow">04 · Print</p>
+      <h2>Thank-you insert.</h2>
+      <p class="lede" style="margin-top: 12px;">A 6 × 4 inch card ships in every Flags USA outbound package. Customers scan the QR to learn more and support USO programs.</p>
+    </div>
+
+    <div class="insert-showcase">
+      <div class="insert-frame">
+        <div class="insert-preview-label">Product Insert Preview &mdash; 6 x 4 Inches &mdash; Print Ready</div>
+        <div class="insert">
+          <div class="insert-head">
+            <img class="f" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/flagsusa-logo.svg?v=1777906927" alt="" />
+            <img class="u" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/united_service_organizations_logo_svg.png?v=1777906927" alt="" />
+          </div>
+          <div class="insert-body">
+            <div class="insert-eb">Thank You &mdash; Proud Partner of the USO&trade;</div>
+            <h3>Your New Flag Honors<br/>Our Nation.</h3>
+            <p>You can easily give back at checkout by adding a <strong>$2.50 donation</strong> to your purchase. It will directly benefit the USO's programs and services for active-duty troops and their families.</p>
+            <div class="qr-box">
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="100" fill="#fff"/>
+                <g fill="#1e343d">
+                  <rect x="4" y="4" width="22" height="22"/>
+                  <rect x="8" y="8" width="14" height="14" fill="#fff"/>
+                  <rect x="11" y="11" width="8" height="8"/>
+                  <rect x="74" y="4" width="22" height="22"/>
+                  <rect x="78" y="8" width="14" height="14" fill="#fff"/>
+                  <rect x="81" y="11" width="8" height="8"/>
+                  <rect x="4" y="74" width="22" height="22"/>
+                  <rect x="8" y="78" width="14" height="14" fill="#fff"/>
+                  <rect x="11" y="81" width="8" height="8"/>
+                  <rect x="32" y="6" width="4" height="4"/><rect x="38" y="6" width="4" height="4"/><rect x="46" y="6" width="4" height="4"/><rect x="56" y="6" width="4" height="4"/><rect x="62" y="6" width="4" height="4"/>
+                  <rect x="34" y="12" width="4" height="4"/><rect x="42" y="12" width="4" height="4"/><rect x="50" y="12" width="4" height="4"/><rect x="58" y="12" width="4" height="4"/><rect x="66" y="12" width="4" height="4"/>
+                  <rect x="32" y="18" width="4" height="4"/><rect x="40" y="18" width="4" height="4"/><rect x="48" y="18" width="4" height="4"/><rect x="56" y="18" width="4" height="4"/><rect x="64" y="18" width="4" height="4"/>
+                  <rect x="6" y="32" width="4" height="4"/><rect x="14" y="32" width="4" height="4"/><rect x="22" y="32" width="4" height="4"/><rect x="32" y="32" width="4" height="4"/><rect x="40" y="32" width="4" height="4"/><rect x="48" y="32" width="4" height="4"/><rect x="56" y="32" width="4" height="4"/><rect x="64" y="32" width="4" height="4"/><rect x="72" y="32" width="4" height="4"/><rect x="80" y="32" width="4" height="4"/><rect x="88" y="32" width="4" height="4"/>
+                  <rect x="10" y="38" width="4" height="4"/><rect x="18" y="38" width="4" height="4"/><rect x="26" y="38" width="4" height="4"/><rect x="36" y="38" width="4" height="4"/><rect x="44" y="38" width="4" height="4"/><rect x="52" y="38" width="4" height="4"/><rect x="60" y="38" width="4" height="4"/><rect x="68" y="38" width="4" height="4"/><rect x="76" y="38" width="4" height="4"/><rect x="84" y="38" width="4" height="4"/>
+                  <rect x="6" y="44" width="4" height="4"/><rect x="22" y="44" width="4" height="4"/><rect x="32" y="44" width="4" height="4"/><rect x="48" y="44" width="4" height="4"/><rect x="56" y="44" width="4" height="4"/><rect x="72" y="44" width="4" height="4"/><rect x="88" y="44" width="4" height="4"/>
+                  <rect x="10" y="50" width="4" height="4"/><rect x="20" y="50" width="4" height="4"/><rect x="34" y="50" width="4" height="4"/><rect x="42" y="50" width="4" height="4"/><rect x="54" y="50" width="4" height="4"/><rect x="62" y="50" width="4" height="4"/><rect x="74" y="50" width="4" height="4"/><rect x="84" y="50" width="4" height="4"/>
+                  <rect x="6" y="56" width="4" height="4"/><rect x="16" y="56" width="4" height="4"/><rect x="24" y="56" width="4" height="4"/><rect x="38" y="56" width="4" height="4"/><rect x="46" y="56" width="4" height="4"/><rect x="52" y="56" width="4" height="4"/><rect x="68" y="56" width="4" height="4"/><rect x="78" y="56" width="4" height="4"/><rect x="86" y="56" width="4" height="4"/>
+                  <rect x="12" y="62" width="4" height="4"/><rect x="20" y="62" width="4" height="4"/><rect x="32" y="62" width="4" height="4"/><rect x="42" y="62" width="4" height="4"/><rect x="50" y="62" width="4" height="4"/><rect x="58" y="62" width="4" height="4"/><rect x="64" y="62" width="4" height="4"/><rect x="76" y="62" width="4" height="4"/><rect x="84" y="62" width="4" height="4"/>
+                  <rect x="6" y="68" width="4" height="4"/><rect x="14" y="68" width="4" height="4"/><rect x="22" y="68" width="4" height="4"/><rect x="34" y="68" width="4" height="4"/><rect x="44" y="68" width="4" height="4"/><rect x="52" y="68" width="4" height="4"/><rect x="60" y="68" width="4" height="4"/><rect x="68" y="68" width="4" height="4"/><rect x="80" y="68" width="4" height="4"/><rect x="88" y="68" width="4" height="4"/>
+                  <rect x="32" y="78" width="4" height="4"/><rect x="40" y="78" width="4" height="4"/><rect x="48" y="78" width="4" height="4"/><rect x="56" y="78" width="4" height="4"/><rect x="64" y="78" width="4" height="4"/>
+                  <rect x="36" y="84" width="4" height="4"/><rect x="44" y="84" width="4" height="4"/><rect x="52" y="84" width="4" height="4"/><rect x="60" y="84" width="4" height="4"/><rect x="68" y="84" width="4" height="4"/>
+                  <rect x="32" y="90" width="4" height="4"/><rect x="42" y="90" width="4" height="4"/><rect x="50" y="90" width="4" height="4"/><rect x="58" y="90" width="4" height="4"/><rect x="66" y="90" width="4" height="4"/>
+                </g>
+              </svg>
+            </div>
+            <p class="insert-scan">Scan to visit our USO partnership page at<strong>FlagsUSA.com/USO</strong></p>
+          </div>
+          <div class="insert-foot">
+            <div class="left">
+              <img class="f" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/flagsusa-logo.svg?v=1777906927" alt="" />
+              <span class="sep">|</span>
+              <img class="u" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/united_service_organizations_logo_svg.png?v=1777906927" alt="" />
+            </div>
+            <div class="right">FlagsUSA.com<br/>USO.org</div>
+          </div>
+        </div>
+        <div class="insert-caption">Print at 100% scale &mdash; No scaling &mdash; Portrait orientation</div>
+      </div>
+    </div>
+  </div>
+  <span class="page-num">006</span>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 7 · NEWSLETTER
+════════════════════════════════════════════════════════════ -->
+<section class="page" id="p7">
+  <span class="page-tag">05 · Newsletter</span>
+  <div class="page-body">
+    <div class="nl-intro">
+      <p class="eyebrow">05 · Email</p>
+      <h2>Announcement newsletter.</h2>
+      <p class="lede" style="margin-top: 12px;">An editorial-style email sent to the Flags USA customer list announcing the USO partnership.</p>
+    </div>
+
+    <div class="nl-mock" style="max-width:5.2in;margin:0 auto;">
+        <div class="nl-mock-header">
+          <img class="u" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/united_service_organizations_logo_svg.png?v=1777906927" alt="USO" />
+          <span class="nl-mock-sep">×</span>
+          <img class="f" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/flagsusa-logo.svg?v=1777906927" alt="Flags USA" />
+        </div>
+        <div class="nl-mock-photo">
+          <img src="Service-Member-USO-Brand-Stock-ATL-2024-0166.jpg" alt="" />
+        </div>
+        <div class="nl-mock-body">
+          <div class="nl-mock-issue">From Flags USA &nbsp;·&nbsp; May 13, 2026</div>
+          <div class="nl-mock-eb">An Announcement from Flags USA</div>
+          <div class="nl-mock-hl">We're a proud partner of <em>the USO.</em></div>
+          <p class="nl-mock-lede">After 38 years of making American flags, we're standing alongside an organization whose mission lines up with everything we believe in. Today we're announcing a partnership with the USO, the leading nonprofit supporting active-duty troops and their families.</p>
+          <div class="nl-mock-h2">How You Give</div>
+          <p class="nl-mock-p">At checkout, you'll see an option to add a <strong>$2.50 donation</strong> to your order. The full amount goes directly to USO programs. We're also matching every dollar contributed, up to <strong>$25,000</strong>.</p>
+          <div class="nl-mock-h2">Why This Partnership</div>
+          <p class="nl-mock-p">The USO has stood beside service members since 1941 — in 55 U.S. states and territories and across 134 countries. For us, a flag has always been more than fabric and grommets.</p>
+          <div class="nl-mock-quote">
+            <p>"At Flags USA, the American flag has always represented far more than a product."</p>
+            <span class="attr">Kim Dacka · CEO, Flags USA</span>
+          </div>
+          <div class="nl-mock-cta">
+            <a href="#">Shop and Support the USO →</a>
+          </div>
+        </div>
+        <div class="nl-mock-footer">
+          Flags USA · 765 Kimberly Drive · Carol Stream, IL 60188<br/>
+          FlagsUSA.com · USO.org
+        </div>
+      </div>
+  </div>
+  <span class="page-num">007</span>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 8 · SOCIAL & EMAIL CREATIVE
+════════════════════════════════════════════════════════════ -->
+<section class="page" id="p8">
+  <span class="page-tag">06 · Social &amp; Email</span>
+  <div class="page-body">
+    <div class="social-intro">
+      <p class="eyebrow">06 · Channels</p>
+      <h2>Launch creative.</h2>
+      <p class="lede" style="margin-top: 12px;">Two Instagram posts and an announcement email mockup.</p>
+    </div>
+
+    <div class="portrait-grid">
+
+      <!-- Portrait 1: Proud Partner — photo background -->
+      <div class="ptile ptile-photo">
+        <img class="ptile-bg" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/USO-Woman-leaning-on-package.jpg?v=1778605772" alt="" />
+        <div class="ptile-scrim"></div>
+        <div class="ptile-topbar"></div>
+        <span class="ptile-stars-tr">★ ★ ★</span>
+        <div class="ptile-overlay">
+          <div class="ptile-gold-kicker">A New Partnership</div>
+          <h4 class="ptile-big-hed">PROUD<br/>PARTNER<br/>OF THE <span class="gold-text">USO.</span></h4>
+          <p class="ptile-body-sm">Flags USA is now standing with the USO. Add $2.50 at checkout to support active-duty troops and military families.</p>
+        </div>
+        <div class="ptile-foot">
+          <div class="ptile-foot-lockup">
+            <img class="f" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/flagsusa-logo.svg?v=1777906927" alt="Flags USA" />
+            <span class="vline"></span>
+            <img class="u" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/united_service_organizations_logo_svg.png?v=1777906927" alt="USO" />
+          </div>
+          <div class="ptile-foot-tagline">Made in the USA · Standing with the USO</div>
+        </div>
+      </div>
+
+      <!-- Portrait 2: Editorial — paper background -->
+      <div class="ptile ptile-editorial">
+        <div class="ptile-ed-frame">
+          <span class="ptile-ed-corner tl"></span>
+          <span class="ptile-ed-corner tr"></span>
+          <span class="ptile-ed-corner bl"></span>
+          <span class="ptile-ed-corner br"></span>
+        </div>
+        <div>
+          <span class="ptile-ed-star-icon">★</span>
+          <div class="ptile-ed-announce">An Announcement &nbsp;·&nbsp; May 2026</div>
+        </div>
+        <div>
+          <h4 class="ptile-ed-hed">We stand<br/><em>with</em> the USO.</h4>
+          <div class="ptile-ed-rule"><span class="ptile-ed-rule-star">★</span></div>
+          <p class="ptile-ed-body">Flags USA is now a proud partner of the United Service Organizations. Add <strong>$2.50</strong> at checkout to support active-duty troops and military families.</p>
+        </div>
+        <div>
+          <div class="ptile-ed-three-stars">★ ★ ★</div>
+          <div class="ptile-ed-logos">
+            <img class="f" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/flagsusa-logo.svg?v=1777906927" alt="Flags USA" />
+            <span class="vline"></span>
+            <img class="u" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/united_service_organizations_logo_svg.png?v=1777906927" alt="USO" />
+          </div>
+          <div class="ptile-ed-footer">Flags USA · United Service Organizations</div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="eyebrow">Email · Announcement Send</p>
+    <div class="email-mock">
+      <div class="email-chrome">
+        <span>From: Flags USA &lt;hello@flagsusa.com&gt;</span>
+        <span>Subject: We're a proud partner of the USO.</span>
+      </div>
+      <div class="email-body">
+        <div class="email-copy">
+          <div class="e-eb">An Announcement from Flags USA</div>
+          <h4>Every flag now stands for something more.</h4>
+          <p>Flags USA is now a proud partner of the USO. Add a $2.50 donation at checkout to support active-duty troops and their families through December 2026.</p>
+          <p>Flags USA will match every dollar contributed, up to $25,000.</p>
+          <a class="email-cta" href="#">Shop and Support the USO →</a>
+        </div>
+        <div class="email-img">
+          <img src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/USO-ServiceMember-Solute.jpg?v=1778605869" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="page-num">008</span>
+</section>
+
+</div><!-- /deck -->
+
+<script>
+document.querySelectorAll('a.toc-row').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+</body>
+</html>
