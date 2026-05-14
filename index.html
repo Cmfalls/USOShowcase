@@ -1588,7 +1588,7 @@ h5,
     <span class="bar-dot"></span>
     Flags USA × USO — Partnership Showcase
   </div>
-  <button class="bar-btn" onclick="window.print()">Print to PDF</button>
+  <button class="bar-btn" type="button" aria-disabled="true">Print to PDF</button>
 </div>
 
 <div class="deck">
@@ -1649,32 +1649,32 @@ h5,
       <img src="Transition-USO-Brand-Stock-ATL-2024-005.jpg" alt="" />
     </div>
     <ul class="toc-list">
-      <li><a class="toc-row" href="#p3">
+      <li><a class="toc-row" aria-disabled="true" tabindex="-1">
         <span class="toc-num">01</span>
         <span><span class="toc-title">At a Glance</span><span class="toc-sub">Partnership goals, key numbers, and campaign timeline.</span></span>
         <span class="toc-page">003</span>
       </a></li>
-      <li><a class="toc-row" href="#p4">
+      <li><a class="toc-row" aria-disabled="true" tabindex="-1">
         <span class="toc-num">02</span>
         <span><span class="toc-title">Landing Page</span><span class="toc-sub">FlagsUSA.com/pages/USO — dedicated partnership page on Shopify.</span></span>
         <span class="toc-page">004</span>
       </a></li>
-      <li><a class="toc-row" href="#p5">
+      <li><a class="toc-row" aria-disabled="true" tabindex="-1">
         <span class="toc-num">03</span>
         <span><span class="toc-title">Press Release</span><span class="toc-sub">Full announcement copy, approved and ready to distribute.</span></span>
         <span class="toc-page">005</span>
       </a></li>
-      <li><a class="toc-row" href="#p6">
+      <li><a class="toc-row" aria-disabled="true" tabindex="-1">
         <span class="toc-num">04</span>
         <span><span class="toc-title">Product Insert</span><span class="toc-sub">6 × 4 in. thank-you card ships inside every order.</span></span>
         <span class="toc-page">006</span>
       </a></li>
-      <li><a class="toc-row" href="#p7">
+      <li><a class="toc-row" aria-disabled="true" tabindex="-1">
         <span class="toc-num">05</span>
         <span><span class="toc-title">Newsletter</span><span class="toc-sub">Announcement email to the Flags USA customer list.</span></span>
         <span class="toc-page">007</span>
       </a></li>
-      <li><a class="toc-row" href="#p8">
+      <li><a class="toc-row" aria-disabled="true" tabindex="-1">
         <span class="toc-num">06</span>
         <span><span class="toc-title">Social &amp; Email Creative</span><span class="toc-sub">Two Instagram posts and an announcement email mockup.</span></span>
         <span class="toc-page">008</span>
@@ -1972,7 +1972,7 @@ h5,
             <span class="attr">Kim Dacka · CEO, Flags USA</span>
           </div>
           <div class="nl-mock-cta">
-            <a href="https://flagsusa.com/pages/uso">Shop and Support the USO →</a>
+            <a aria-disabled="true" tabindex="-1">Shop and Support the USO →</a>
           </div>
         </div>
         <div class="nl-mock-footer">
@@ -2061,7 +2061,7 @@ h5,
           <h4>Every flag now stands for something more.</h4>
           <p>Flags USA is now a proud partner of the USO. Add a $2.50 donation at checkout to support active-duty troops and their families through December 2026.</p>
           <p>Flags USA will match every dollar contributed, up to $25,000.</p>
-          <a class="email-cta" href="#">Shop and Support the USO →</a>
+          <a class="email-cta" aria-disabled="true" tabindex="-1">Shop and Support the USO →</a>
         </div>
         <div class="email-img">
           <img src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/USO-ServiceMember-Solute.jpg?v=1778605869" alt="" />
@@ -2073,16 +2073,6 @@ h5,
 </section>
 
 </div><!-- /deck -->
-
-<script>
-document.querySelectorAll('a.toc-row').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
-</script>
 
 </body>
 </html>
