@@ -1456,20 +1456,43 @@ h5,
 
 @page { size: letter; margin: 0; }
 @media print {
-  body { background: #fff; }
+  html,
+  body {
+    width: 8.5in;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff;
+  }
   .bar { display: none !important; }
-  .deck { padding: 0; gap: 0; }
+  .deck {
+    display: block !important;
+    width: 8.5in;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
   .page {
+    display: flex !important;
     box-shadow: none;
+    page-break-before: auto;
     page-break-after: always;
+    page-break-inside: avoid;
+    break-before: auto;
     break-after: page;
+    break-inside: avoid;
     transform: none !important;
     margin: 0 !important;
+    padding: 0 !important;
     width: 8.5in;
     height: 11in;
+    max-width: none;
     min-height: 0;
+    overflow: hidden;
   }
-  .page:last-child { page-break-after: auto; }
+  .page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
 }
 @media (max-width: 900px) {
   .deck { padding: 72px 12px 48px; }
