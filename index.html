@@ -6,7 +6,7 @@
 <title>Flags USA × USO — Partnership Showcase</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Jost:wght@400;500;600;700;800&family=Permanent+Marker&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
 <style>
 /* ── Variables ────────────────────────────────────────────── */
 :root {
@@ -82,6 +82,23 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+.page::after {
+  content: '';
+  position: absolute;
+  top: 0.42in;
+  right: 0.8in;
+  width: 0.95in;
+  height: 0.2in;
+  background: url("https://cdn.shopify.com/s/files/1/0888/9240/8090/files/flagsusa-logo.svg?v=1777906927") center / contain no-repeat;
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 2;
+}
+.cover::after {
+  top: 1.02in;
+  opacity: 0.2;
+  filter: brightness(0) invert(1);
 }
 .page-body {
   flex: 1;
@@ -163,7 +180,7 @@ em { color: var(--red); font-style: italic; }
   height: 100%;
   object-fit: cover;
   object-position: center 48%;
-  opacity: 0.24;
+  opacity: 0.34;
   filter: saturate(0.9) contrast(1.08);
 }
 .cover-bg::after {
@@ -171,8 +188,8 @@ em { color: var(--red); font-style: italic; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(0,33,71,0.96) 0%, rgba(0,33,71,0.82) 48%, rgba(0,33,71,0.95) 100%),
-    linear-gradient(180deg, rgba(0,33,71,0.78) 0%, rgba(0,33,71,0.52) 42%, rgba(0,33,71,0.9) 100%);
+    linear-gradient(90deg, rgba(0,33,71,0.91) 0%, rgba(0,33,71,0.72) 48%, rgba(0,33,71,0.9) 100%),
+    linear-gradient(180deg, rgba(0,33,71,0.7) 0%, rgba(0,33,71,0.42) 42%, rgba(0,33,71,0.84) 100%);
 }
 .cover::before {
   content: '';
@@ -258,29 +275,65 @@ em { color: var(--red); font-style: italic; }
 /* ── ══════════════════════════════════════════════════════ ── */
 /* ── PAGE 2 · TABLE OF CONTENTS                            ── */
 /* ── ══════════════════════════════════════════════════════ ── */
-.toc-intro { margin: 28px 0 24px; }
+.toc-intro { margin: 28px 0 20px; }
+.toc-kicker-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 10px;
+}
+.toc-kicker-row .eyebrow { margin: 0; }
+.toc-count {
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+}
+.toc-intro h2 {
+  max-width: 5.3in;
+  line-height: 1.04;
+}
+.toc-deck {
+  max-width: 5.5in;
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
 .toc-photo {
   width: 100%;
-  height: 1.65in;
-  margin: 0 0 24px;
-  border-radius: 5px;
+  height: 1.9in;
+  margin: 0 0 22px;
+  border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 10px 28px rgba(0,33,71,0.12);
+  box-shadow: 0 14px 34px rgba(0,33,71,0.12), 0 1px 4px rgba(0,33,71,0.08);
+  position: relative;
+  background: var(--uso-navy);
 }
 .toc-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 40%;
+  object-position: center 22%;
   display: block;
+}
+.toc-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,33,71,0.22), rgba(0,33,71,0.02) 46%, rgba(0,33,71,0.18));
+  pointer-events: none;
 }
 .toc-list { list-style: none; padding: 0; margin: 0; }
 .toc-row {
   display: grid;
-  grid-template-columns: 44px 1fr auto;
-  align-items: center;
-  gap: 20px;
-  padding: 16px 0;
+  grid-template-columns: 42px 1fr auto;
+  align-items: start;
+  gap: 22px;
+  padding: 14px 0;
   border-bottom: 1px solid var(--line);
   color: inherit;
   text-decoration: none;
@@ -293,17 +346,24 @@ em { color: var(--red); font-style: italic; }
   color: var(--red);
   font-weight: 700;
   letter-spacing: 0.05em;
+  padding-top: 5px;
 }
 .toc-title {
   font-family: "Newsreader", serif;
-  font-size: 21px;
+  font-size: 20px;
   font-weight: 600;
   color: var(--ink);
   display: block;
   line-height: 1.1;
 }
 .toc-sub { font-size: 12px; color: var(--muted); margin-top: 3px; }
-.toc-page { font-size: 12px; color: var(--muted); font-weight: 500; }
+.toc-page {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+  padding-top: 6px;
+  letter-spacing: 0.08em;
+}
 .toc-row:hover .toc-title { color: var(--red); }
 
 /* ── ══════════════════════════════════════════════════════ ── */
@@ -383,6 +443,217 @@ em { color: var(--red); font-style: italic; }
   color: var(--ink);
 }
 .about-card p { font-size: 12.5px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+.glance-page::after { display: none; }
+.glance-page .page-tag { display: none; }
+.glance-page .page-num { bottom: 0.24in; right: 0.62in; }
+.glance-page .page-body {
+  padding: 0.52in 0.62in 0.5in;
+}
+.glance-page > .glance-enhanced {
+  padding: 0.52in 0.62in 0.5in;
+}
+.glance-page > .page-body {
+  display: none;
+}
+.glance-page .page-body > .glance-intro,
+.glance-page .page-body > .stats,
+.glance-page .page-body > .timeline,
+.glance-page .page-body > .glance-about,
+.glance-page .page-body > .eyebrow {
+  display: none;
+}
+.glance-enhanced {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: var(--ink);
+}
+.g-cobrand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 22px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+.g-cobrand-left { display: flex; align-items: center; gap: 16px; }
+.g-cobrand img.g-flags { height: 22px; }
+.g-cobrand img.g-uso { height: 24px; }
+.g-divider { width: 1px; height: 24px; background: var(--line); }
+.g-partner {
+  display: flex; align-items: center; gap: 9px;
+  font-family: "JetBrains Mono", monospace; font-size: 8px; letter-spacing: 0.18em;
+  text-transform: uppercase; font-weight: 600; color: var(--ink);
+}
+.g-meta {
+  font-family: "JetBrains Mono", monospace; font-size: 9px; letter-spacing: 0.22em;
+  text-transform: uppercase; font-weight: 600; color: var(--ink);
+}
+.g-meta span { color: var(--red); }
+.g-section-label {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 28px;
+  font-family: "JetBrains Mono", monospace; font-size: 9px; letter-spacing: 0.24em;
+  text-transform: uppercase; font-weight: 600; color: var(--ink);
+}
+.g-section-label .num { color: var(--red); font-weight: 700; }
+.g-section-label .line { width: 54px; height: 1px; background: var(--line); }
+.g-eyebrow {
+  font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--red); font-weight: 700; margin-bottom: 12px;
+}
+.g-hero {
+  position: relative;
+  padding-right: 1.15in;
+}
+.g-headline {
+  font-family: "Jost", sans-serif;
+  font-size: 52px;
+  line-height: 0.98;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 20px;
+}
+.g-headline .brush {
+  display: inline-block;
+  font-family: "Permanent Marker", cursive;
+  color: var(--red);
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  transform: rotate(-2deg);
+}
+.g-star {
+  position: absolute; top: 10px; right: 0.06in;
+  width: 0.78in; height: 0.78in; border: 1px dashed rgba(166,43,37,0.38);
+  border-radius: 50%; display: grid; place-items: center;
+  color: rgba(166,43,37,0.5); font-size: 38px; line-height: 1;
+}
+.g-lede {
+  max-width: 6.1in;
+  margin: 0 0 30px;
+  font-size: 13px;
+  line-height: 1.62;
+  color: var(--ink);
+}
+.g-lede strong { font-weight: 700; }
+.g-stats {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  padding: 24px 0;
+  margin-bottom: 32px;
+  position: relative;
+}
+.g-stats::before, .g-stats::after {
+  content: ''; position: absolute; left: 0; right: 0; height: 1px; background: var(--line);
+}
+.g-stats::before { top: 7px; }
+.g-stats::after { bottom: 7px; }
+.g-stat { padding: 0 22px; border-right: 1px dashed var(--line); }
+.g-stat:first-child { padding-left: 0; }
+.g-stat:last-child { padding-right: 0; border-right: 0; }
+.g-stat-label {
+  display: flex; align-items: center; gap: 8px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--red); font-weight: 600; margin-bottom: 12px;
+}
+.g-stat-icon {
+  width: 24px; height: 24px; display: grid; place-items: center;
+  border: 1.5px solid var(--red); color: var(--red);
+  font-size: 13px; font-weight: 800; line-height: 1;
+}
+.g-stat-number {
+  font-family: "Jost", sans-serif;
+  font-size: 52px; font-weight: 800; color: var(--ink);
+  line-height: 0.95; letter-spacing: -0.04em; margin-bottom: 10px;
+}
+.g-stat-number .unit { font-size: 29px; letter-spacing: -0.03em; margin-left: 2px; }
+.g-stat-copy { font-size: 10.5px; line-height: 1.48; color: var(--ink); max-width: 1.9in; }
+.g-stat-copy strong { color: var(--red); font-weight: 700; }
+.g-timeline-section { margin-bottom: 32px; }
+.g-timeline-head {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px;
+}
+.g-timeline-title {
+  font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--red); font-weight: 700;
+}
+.g-timeline-title span { color: var(--ink); margin-left: 8px; font-weight: 600; }
+.g-key {
+  display: flex; gap: 13px; font-family: "JetBrains Mono", monospace;
+  font-size: 7.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink);
+}
+.g-key i {
+  display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 5px;
+}
+.g-key .done { background: var(--red); }
+.g-key .active { background: var(--ink); box-shadow: 0 0 0 3px rgba(30,52,61,0.16); }
+.g-key .next { border: 1px solid var(--muted); }
+.g-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+}
+.g-track, .g-progress {
+  position: absolute; top: 32px; left: 9%; right: 9%; height: 2px; background: var(--line); z-index: 0;
+}
+.g-progress { right: auto; width: 20.5%; background: linear-gradient(90deg,var(--red),var(--ink)); z-index: 1; }
+.g-mile {
+  position: relative; z-index: 2; text-align: center; padding: 0 6px;
+}
+.g-circle {
+  width: 64px; height: 64px; margin: 0 auto 12px;
+  border-radius: 50%; background: #fff; border: 1.5px solid var(--line);
+  display: grid; place-items: center; color: var(--ink);
+  font-size: 24px; font-weight: 700;
+}
+.g-mile.done .g-circle { background: var(--red); border-color: var(--red); color: #fff; }
+.g-mile.active .g-circle {
+  background: var(--ink); border-color: var(--ink); color: #fff;
+  box-shadow: 0 0 0 6px rgba(166,43,37,0.12), 0 8px 20px rgba(30,52,61,0.18);
+}
+.g-date {
+  font-family: "JetBrains Mono", monospace; font-size: 7.8px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--red); font-weight: 600; margin-bottom: 4px;
+}
+.g-name {
+  font-size: 11px; line-height: 1.2; text-transform: uppercase; color: var(--ink);
+  font-weight: 800; letter-spacing: 0.02em; margin-bottom: 4px;
+}
+.g-detail { font-size: 9.5px; line-height: 1.35; color: var(--muted); max-width: 1.18in; margin: 0 auto; }
+.g-about {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: auto;
+}
+.g-about-card {
+  background: #fff; border: 1px solid var(--line); padding: 18px 18px 16px;
+  display: grid; grid-template-columns: 0.72in 1fr; gap: 16px; position: relative;
+}
+.g-about-card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--ink);
+}
+.g-about-card.uso::before { background: var(--red); }
+.g-illo {
+  width: 0.72in; height: 0.72in; background: #f1ecdf;
+  display: grid; place-items: center; color: var(--ink); font-size: 24px; font-weight: 800;
+}
+.g-about-content h3 {
+  font-family: "Jost", sans-serif; font-size: 16px; line-height: 1.1;
+  font-weight: 800; text-transform: uppercase; color: var(--ink); margin: 0 0 7px;
+}
+.g-about-content p { font-size: 9.8px; line-height: 1.48; color: var(--ink); margin: 0; }
+.g-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+.g-tag {
+  font-family: "JetBrains Mono", monospace; font-size: 7px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--red); border: 1px solid var(--line);
+  background: var(--paper); padding: 3px 6px; font-weight: 600;
+}
 
 /* ── ══════════════════════════════════════════════════════ ── */
 /* ── PAGE 4 · LANDING PAGE                                 ── */
@@ -1024,10 +1295,10 @@ em { color: var(--red); font-style: italic; }
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  padding: 24px 22px 18px;
+  padding: 20px 20px 14px;
 }
 .ptile-ed-frame {
-  position: absolute; inset: 10px;
+  position: absolute; inset: 9px;
   border: 1px solid rgba(30,52,61,0.22);
   pointer-events: none;
 }
@@ -1040,37 +1311,37 @@ em { color: var(--red); font-style: italic; }
 .ptile-ed-corner.bl { bottom: -4px; left: -4px; border-width: 0 0 2px 2px; }
 .ptile-ed-corner.br { bottom: -4px; right: -4px; border-width: 0 2px 2px 0; }
 .ptile-ed-announce {
-  font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+  font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--ink); font-weight: 600; opacity: 0.55;
 }
-.ptile-ed-star-icon { font-size: 11px; color: rgba(30,52,61,0.38); display: block; margin-bottom: 7px; }
+.ptile-ed-star-icon { font-size: 10px; color: rgba(30,52,61,0.38); display: block; margin-bottom: 5px; }
 .ptile-ed-hed {
   font-family: "Newsreader", serif;
-  font-size: 40px; font-weight: 700; color: var(--uso-navy);
-  line-height: 1.05; margin: 0;
+  font-size: 35px; font-weight: 700; color: var(--uso-navy);
+  line-height: 1.02; margin: 0;
 }
 .ptile-ed-hed em { color: var(--red); font-style: italic; }
 .ptile-ed-rule {
-  display: flex; align-items: center; gap: 8px; width: 100%; margin: 12px 0;
+  display: flex; align-items: center; gap: 8px; width: 100%; margin: 10px 0;
 }
 .ptile-ed-rule::before, .ptile-ed-rule::after {
   content: ''; flex: 1; height: 1px; background: rgba(30,52,61,0.2);
 }
 .ptile-ed-rule-star { font-size: 10px; color: rgba(30,52,61,0.4); }
 .ptile-ed-body {
-  font-size: 12.5px; color: var(--ink); line-height: 1.55; max-width: 86%; margin: 0 auto;
+  font-size: 11px; color: var(--ink); line-height: 1.48; max-width: 88%; margin: 0 auto;
 }
-.ptile-ed-three-stars { letter-spacing: 8px; font-size: 10px; color: rgba(30,52,61,0.38); }
+.ptile-ed-three-stars { letter-spacing: 7px; font-size: 9px; color: rgba(30,52,61,0.38); }
 .ptile-ed-logos {
   display: flex; align-items: center; gap: 13px;
   border-top: 1px solid rgba(30,52,61,0.15); width: 100%;
-  padding-top: 10px; justify-content: center; margin-top: 8px;
+  padding-top: 8px; justify-content: center; margin-top: 6px;
 }
-.ptile-ed-logos img.f { height: 10px; }
-.ptile-ed-logos img.u { height: 18px; }
-.ptile-ed-logos .vline { width: 1px; height: 20px; background: rgba(30,52,61,0.2); }
+.ptile-ed-logos img.f { height: 8px; }
+.ptile-ed-logos img.u { height: 15px; }
+.ptile-ed-logos .vline { width: 1px; height: 17px; background: rgba(30,52,61,0.2); }
 .ptile-ed-footer {
-  font-size: 7.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 5px;
+  font-size: 6.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 4px;
 }
 
 /* ── Print ────────────────────────────────────────────────── */
@@ -1152,8 +1423,12 @@ em { color: var(--red); font-style: italic; }
   <span class="page-tag">Contents</span>
   <div class="page-body">
     <div class="toc-intro" style="margin-top: 36px;">
-      <p class="eyebrow">Inside This Deck</p>
+      <div class="toc-kicker-row">
+        <p class="eyebrow">Inside This Deck</p>
+        <div class="toc-count">06 Deliverables</div>
+      </div>
       <h2>Partnership launch assets.</h2>
+      <p class="toc-deck">A page-by-page guide to the customer-facing launch materials, announcement copy, and campaign creative.</p>
     </div>
     <div class="toc-photo">
       <img src="Transition-USO-Brand-Stock-ATL-2024-005.jpg" alt="" />
@@ -1197,7 +1472,50 @@ em { color: var(--red); font-style: italic; }
 <!-- ════════════════════════════════════════════════════════════
      PAGE 3 · AT A GLANCE
 ════════════════════════════════════════════════════════════ -->
-<section class="page" id="p3">
+<section class="page glance-page" id="p3">
+  <div class="glance-enhanced">
+    <div class="g-cobrand">
+      <div class="g-cobrand-left">
+        <img class="g-flags" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/flagsusa-logo.svg?v=1777906927" alt="Flags USA" />
+        <div class="g-divider"></div>
+        <div class="g-partner">
+          <img class="g-uso" src="https://cdn.shopify.com/s/files/1/0888/9240/8090/files/united_service_organizations_logo_svg.png?v=1777906927" alt="USO" />
+          <span>Proud Partner</span>
+        </div>
+      </div>
+      <div class="g-meta">Partnership <span>Â·</span> 2026</div>
+    </div>
+    <div class="g-section-label"><span class="num">01</span><span class="line"></span><span>At a Glance</span></div>
+    <div class="g-hero">
+      <div class="g-eyebrow">The Partnership in Brief</div>
+      <h1 class="g-headline">One Mission.<br/><span class="brush">Real Impact.</span></h1>
+      <div class="g-star">★</div>
+      <p class="g-lede">Flags USA and the USO share a commitment to the men and women who serve. The partnership runs through <strong>December 2026</strong> and gives every customer a direct way to support active-duty troops and military families.</p>
+    </div>
+    <div class="g-stats">
+      <div class="g-stat"><div class="g-stat-label"><span class="g-stat-icon">$</span>Add-on Donation</div><div class="g-stat-number">$2.50</div><div class="g-stat-copy">Optional add-on donation at checkout. <strong>100% benefits USO programs and services.</strong></div></div>
+      <div class="g-stat"><div class="g-stat-label"><span class="g-stat-icon">↗</span>Match Commitment</div><div class="g-stat-number">$25<span class="unit">K</span></div><div class="g-stat-copy"><strong>Flags USA matches every dollar.</strong> Doubles direct response donations.</div></div>
+      <div class="g-stat"><div class="g-stat-label"><span class="g-stat-icon">□</span>Campaign Window</div><div class="g-stat-number">8<span class="unit">mo</span></div><div class="g-stat-copy">Anchored to <strong>America's 250th anniversary year.</strong> May through December 2026.</div></div>
+    </div>
+    <div class="g-timeline-section">
+      <div class="g-timeline-head">
+        <div class="g-timeline-title">Campaign Timeline <span>2026</span></div>
+        <div class="g-key"><span><i class="done"></i>Complete</span><span><i class="active"></i>Active</span><span><i class="next"></i>Upcoming</span></div>
+      </div>
+      <div class="g-timeline">
+        <div class="g-track"></div><div class="g-progress"></div>
+        <div class="g-mile done"><div class="g-circle">✦</div><div class="g-date">May 2026</div><div class="g-name">Launch &amp; Press</div><div class="g-detail">Partnership announcement and earned media push</div></div>
+        <div class="g-mile active"><div class="g-circle">250</div><div class="g-date">Jun - Jul</div><div class="g-name">America 250 Push</div><div class="g-detail">Peak summer flag season meets semiquincentennial</div></div>
+        <div class="g-mile"><div class="g-circle">↗</div><div class="g-date">Aug - Sep</div><div class="g-name">Mid-Campaign</div><div class="g-detail">Progress report to donors and partners</div></div>
+        <div class="g-mile"><div class="g-circle">★</div><div class="g-date">Oct - Nov</div><div class="g-name">Veterans Day</div><div class="g-detail">Tribute campaign honoring service members</div></div>
+        <div class="g-mile"><div class="g-circle">✓</div><div class="g-date">Dec 2026</div><div class="g-name">Wrap &amp; Report</div><div class="g-detail">Final tally, impact recap, donor recognition</div></div>
+      </div>
+    </div>
+    <div class="g-about">
+      <div class="g-about-card uso"><div class="g-illo">USO</div><div class="g-about-content"><h3>About the USO</h3><p>The leading nonprofit dedicated to strengthening the well-being of America's military and their families. Since 1941, the USO has operated 250+ centers across 55 states/territories and 134 countries.</p><div class="g-tags"><span class="g-tag">Est. 1941</span><span class="g-tag">250+ Centers</span><span class="g-tag">134 Countries</span></div></div></div>
+      <div class="g-about-card flags"><div class="g-illo">⚑</div><div class="g-about-content"><h3>About Flags USA</h3><p>Founded in 1987, Flags USA is a women-owned, family-run operation based in Carol Stream, IL. Every flag is proudly made in America, from a small family business to a national supplier.</p><div class="g-tags"><span class="g-tag">Est. 1987</span><span class="g-tag">Women-Owned</span><span class="g-tag">Made in USA</span></div></div></div>
+    </div>
+  </div>
   <span class="page-tag">01 · At a Glance</span>
   <div class="page-body">
     <div class="glance-intro">
@@ -1315,7 +1633,7 @@ em { color: var(--red); font-style: italic; }
       <p>Founded in 1987, Flags USA began as a small, family-run business. Over 37 years later, the women-owned and family-run operation has grown to a 4,000 square foot warehouse with multiple mother-daughter teams. Every flag is proudly made in America.</p>
 
       <h4>Media Contact</h4>
-      <p>Connor Falls · Marketing Manager, Flags USA<br/>connor@flagsusa.com · (866) 879-1776</p>
+      <p>Rachel · Flags USA<br/>rachel@flagsusa.com · (866) 879-1776</p>
     </div>
 
     <div class="pr-end">— END —</div>
